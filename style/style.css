@@ -1,1 +1,164 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.staggered-title {
+  position: relative;
+  color: #333;
+}
+
+.staggered-title::before,
+.staggered-title::after {
+  position: absolute;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  content: '';
+  border: 1px solid #333;
+}
+
+.staggered-title::before {
+  top: 15%;
+  left: 30%;
+  border-bottom: 0;
+  border-right: 0;
+}
+
+.staggered-title::after {
+  right: 30%;
+  bottom: 15%;
+  border-top: 0;
+  border-left: 0;
+}
+
+.staggered-txt {
+  background: linear-gradient(30deg, #fff, #f19483);
+}
+
+.staggered-txt h3 {
+  letter-spacing: 0.5rem;
+}
+
+.staggered-txt ul {
+  font-size: 0;
+}
+
+.staggered-txt ul li {
+  display: inline-block;
+  color: #333;
+  letter-spacing: 0.1rem;
+}
+
+.experience-table thead {
+  display: none;
+}
+
+.experience-table tr {
+  display: block;
+  margin-bottom: 1rem;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.experience-table td {
+  display: block;
+  padding-left: 6rem;
+  text-align: left;
+  text-indent: -6rem;
+}
+
+.experience-table td + td {
+  border-top: 1px solid #333;
+}
+
+.experience-table td::before {
+  display: inline-block;
+  padding-right: 1rem;
+  width: 6rem;
+  text-align: right;
+  color: #f19483;
+  content: attr(data-thtitle) " : ";
+}
+
+.experience-table td:first-child {
+  color: #f19483;
+  background-color: #333;
+}
+
+.experience-table td:first-child::before {
+  content: 'No.';
+}
+
+@media screen and (min-width: 768px) {
+  .staggered .col-12:nth-child(odd) {
+    margin-top: -10%;
+  }
+  .staggered-title::before {
+    left: 35%;
+  }
+  .staggered-title::after {
+    right: 35%;
+  }
+  .experience-table td {
+    width: 696px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .experience-table {
+    border: 1px solid #333;
+  }
+  .experience-table thead {
+    display: table-header-group;
+  }
+  .experience-table th {
+    font-size: 1.25rem;
+    color: #f19483;
+    background-color: #333;
+    border: 1px solid #333;
+  }
+  .experience-table tr {
+    display: table-row;
+    font-size: 1rem;
+  }
+  .experience-table td {
+    display: table-cell;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    width: auto;
+    text-align: center;
+    text-indent: 0;
+    border: 1px solid #333;
+  }
+  .experience-table td + td {
+    border-top: transparent;
+  }
+  .experience-table td::before {
+    display: none;
+  }
+  .experience-table td:first-child {
+    color: #333;
+    background-color: #fff;
+  }
+  .experience-table td:first-child::before {
+    display: inline;
+    padding-right: 0;
+    color: #333;
+    background-color: #fff;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .staggered-title::before {
+    left: 35%;
+  }
+  .staggered-title::after {
+    right: 35%;
+  }
+  .experience-table th {
+    font-size: 1.5rem;
+  }
+  .experience-table tr {
+    font-size: 1.25rem;
+  }
+  .experience-table td {
+    padding: 0.5rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

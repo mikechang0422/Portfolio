@@ -1,3 +1,7 @@
+body {
+  background: linear-gradient(30deg, #d7c4bb, #fff);
+}
+
 .btn-primary {
   background-color: #333;
   border-color: #f19483;
@@ -111,8 +115,30 @@
   background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
 }
 
+.carousel-indicators .active {
+  background-color: #f19483;
+}
+
 .carousel-item img {
   height: 26vw;
+}
+
+.carousel-item .carousel-caption {
+  color: #f19483;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(rgba(0, 0, 0, 0.1)));
+  background: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.1));
+  border-radius: 50% 50% 0 0;
+  text-shadow: 1px 1px #333;
+}
+
+.carousel-item .carousel-caption h5 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.carousel-item .carousel-caption p {
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .path {
@@ -132,6 +158,7 @@
 
 .breadcrumb-item a:hover {
   color: #f19483;
+  text-shadow: 1px 1px #000;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -139,9 +166,12 @@
 }
 
 .breadcrumb-item.active {
-  -webkit-text-decoration: underline #333;
-          text-decoration: underline #333;
-  color: #333;
+  color: #f19483;
+  text-shadow: 1px 1px #000;
+}
+
+.breadcrumb-item.active::before {
+  text-shadow: none;
 }
 
 .staggered-title {
@@ -152,6 +182,7 @@
 
 .staggered-txt {
   background: linear-gradient(30deg, #fff, #f19483);
+  border-radius: 10px;
 }
 
 .staggered-txt h3 {
@@ -192,6 +223,7 @@
   padding-left: 6rem;
   text-align: left;
   text-indent: -6rem;
+  background-color: #fff;
 }
 
 .experience-table td + td {
@@ -222,8 +254,6 @@
 }
 
 .page-item.active .page-link {
-  -webkit-text-decoration: underline #333;
-          text-decoration: underline #333;
   color: #333;
   background-color: #f19483;
   border-color: #f0b8ae;

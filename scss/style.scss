@@ -1,6 +1,10 @@
 $color-primary: #f19483;
 $color-secondary: #333;
 
+body {
+  background: linear-gradient(30deg, #d7c4bb, #fff);
+}
+
 .btn-primary {
   background-color: $color-secondary;
   border-color: $color-primary;
@@ -118,10 +122,32 @@ $color-secondary: #333;
 }
 
 //carousel
+.carousel-indicators {
+  .active {
+    background-color: $color-primary;
+  }
+}
 
 .carousel-item {
   img {
     height: 26vw;
+  }
+
+  .carousel-caption {
+    color: $color-primary;
+    background: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.1));
+    border-radius: 50% 50% 0 0;
+    text-shadow: 1px 1px $color-secondary;
+
+    h5 {
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -140,7 +166,11 @@ $color-secondary: #333;
     color: $color-secondary;
     transition: 0.3s;
   }
-  a:hover { color: $color-primary; }
+
+  a:hover {
+    color: $color-primary;
+    text-shadow: 1px 1px #000;
+  }
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -148,8 +178,12 @@ $color-secondary: #333;
 }
 
 .breadcrumb-item.active {
-  text-decoration: underline $color-secondary;
-  color: $color-secondary;
+  color: $color-primary;
+  text-shadow: 1px 1px #000;
+}
+
+.breadcrumb-item.active::before {
+  text-shadow: none;
 }
 
 //staggered
@@ -162,6 +196,7 @@ $color-secondary: #333;
 
 .staggered-txt {
   background: linear-gradient(30deg, #fff, $color-primary);
+  border-radius: 10px;
 
   h3 { letter-spacing: 0.5rem; }
 
@@ -202,6 +237,7 @@ $color-secondary: #333;
     padding-left: 6rem;
     text-align: left;
     text-indent: -6rem;
+    background-color: #fff;
   }
 
   td + td {
@@ -235,7 +271,6 @@ $color-secondary: #333;
 
 .page-item.active {
   .page-link {
-    text-decoration: underline $color-secondary;
     color: $color-secondary;
     background-color: $color-primary;
     border-color: rgb(240, 184, 174);

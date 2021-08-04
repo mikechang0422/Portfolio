@@ -1,15 +1,38 @@
 $color-primary: #f19483;
 $color-secondary: #333;
 
-//staggered
-
-.staggered-title {
-  position: relative;
-  color: $color-secondary;
+.btn-primary {
+  background-color: $color-secondary;
+  border-color: $color-primary;
 }
 
-.staggered-title::before,
-.staggered-title::after {
+.btn-primary:hover {
+  background-color: $color-primary;
+  border-color: $color-primary;
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  box-shadow: 0 0 0 0.25rem rgba(188, 143, 143, 0.5);
+}
+
+.btn-check:active + .btn-primary:focus,
+.btn-check:checked + .btn-primary:focus,
+.btn-primary.active:focus,
+.btn-primary:active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(188, 143, 143, 0.5);
+}
+
+.btn-secondary {
+  background-color: $color-secondary;
+  border-color: $color-primary;
+}
+
+.title-decoration::before,
+.title-decoration::after {
   position: absolute;
   display: block;
   width: 1rem;
@@ -18,18 +41,123 @@ $color-secondary: #333;
   border: 1px solid $color-secondary;
 }
 
-.staggered-title::before {
+.title-decoration::before {
   top: 15%;
   left: 30%;
   border-bottom: 0;
   border-right: 0;
 }
 
-.staggered-title::after {
+.title-decoration::after {
   right: 30%;
   bottom: 15%;
   border-top: 0;
   border-left: 0;
+}
+
+//nav
+.navbar {
+  background: $color-secondary;
+
+  .navbar-brand {
+    color: $color-primary;
+    transition: 0.3s;
+  }
+
+  .navbar-toggler:focus {
+    padding-bottom: 1px;
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $color-primary;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
+
+.navbar-dark {
+  .navbar-nav {
+    .nav-link.active {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
+
+.btn-outline-success {
+  color: $color-primary;
+  border-color: $color-primary;
+}
+
+.btn-outline-success:hover {
+  color: rgba(255, 255, 255, 0.75);
+  background-color: $color-primary;
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.modal-content {
+  color: $color-primary;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 5px solid #fff;
+  box-shadow: 1px 1px 15px #fff;
+  backdrop-filter: blur(5px);
+
+  .modal-title {
+    margin-left: 38%;
+  }
+
+  .modal-header {
+    .btn-close {
+      background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+    }
+  }
+}
+
+//carousel
+
+.carousel-item {
+  img {
+    height: 26vw;
+  }
+}
+
+//breadcrumb
+.path {
+  position: relative;
+}
+
+.breadcrumb {
+  background-color: transparent;
+}
+
+.breadcrumb-item {
+  a {
+    text-decoration: none;
+    color: $color-secondary;
+    transition: 0.3s;
+  }
+  a:hover { color: $color-primary; }
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: $color-secondary;
+}
+
+.breadcrumb-item.active {
+  text-decoration: underline $color-secondary;
+  color: $color-secondary;
+}
+
+//staggered
+
+.staggered-title {
+  position: relative;
+  color: $color-secondary;
+  font-weight: 700;
 }
 
 .staggered-txt {
@@ -50,6 +178,14 @@ $color-secondary: #333;
 
 //experience
 .experience-table {
+  caption {
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    caption-side: top;
+    color: $color-secondary;
+  }
+
   thead {
     display: none;
   }
@@ -91,7 +227,41 @@ $color-secondary: #333;
   }
 }
 
+//pagination
+.page-link {
+  color: $color-primary;
+  background-color: $color-secondary;
+}
+
+.page-item.active {
+  .page-link {
+    text-decoration: underline $color-secondary;
+    color: $color-secondary;
+    background-color: $color-primary;
+    border-color: rgb(240, 184, 174);
+  }
+}
+
+.page-link:hover {
+  color: rgb(240, 184, 174);
+  background-color: #666;
+}
+
 @media screen and (min-width: 768px) {
+  //nav
+  .navbar {
+    .modal-title {
+      margin-left: 42%;
+    }
+  }
+
+  //carousel
+  .carousel-item {
+    img {
+      height: 24vw;
+    }
+  }
+
   //staggered
   .staggered {
     .col-12:nth-child(odd) { margin-top: -10%; }
@@ -110,7 +280,20 @@ $color-secondary: #333;
 }
 
 @media screen and (min-width: 960px) {
-  //experience
+  //nav
+  .navbar {
+    .modal-title {
+      margin-left: 43%;
+    }
+  }
+
+  //carousel
+  .carousel-item {
+    img {
+      height: 22vw;
+    }
+  }
+
   //experience
   .experience-table {
     border: 1px solid $color-secondary;
@@ -167,6 +350,12 @@ $color-secondary: #333;
   .staggered-title::before { left: 35%; }
 
   .staggered-title::after { right: 35%; }
+  //carousel
+  .carousel-item {
+    img {
+      height: 20vw;
+    }
+  }
 
   //experience
   .experience-table {

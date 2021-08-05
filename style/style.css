@@ -1,5 +1,9 @@
+@import url("../style/reset.css");
+@import url("../style/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+TC:wght@100;400;700&display=swap");
 body {
-  background: linear-gradient(30deg, #d7c4bb, #fff);
+  font-family: 'Merriweather', serif, 'Noto Sans TC', sans-serif;
+  background-color: #fffaff;
 }
 
 .btn-primary {
@@ -34,6 +38,14 @@ body {
   border-color: #f19483;
 }
 
+.title-decoration {
+  position: relative;
+  font-weight: 700;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  text-align: center;
+}
+
 .title-decoration::before,
 .title-decoration::after {
   position: absolute;
@@ -41,7 +53,7 @@ body {
   width: 1rem;
   height: 1rem;
   content: '';
-  border: 1px solid #333;
+  border: 3px solid #333;
 }
 
 .title-decoration::before {
@@ -141,48 +153,117 @@ body {
   font-size: 1.5rem;
 }
 
+.introduction {
+  background-color: rgba(85, 66, 54, 0.5);
+}
+
+.introduction .introduction-img .img {
+  margin: 1rem 0;
+  border: 3px solid rgba(255, 255, 255, 0.75);
+}
+
+.introduction .introduction-txt ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.introduction .introduction-txt li {
+  position: relative;
+  padding-bottom: 0.5rem;
+  padding-left: 6rem;
+  font-size: 1rem;
+  text-align: left;
+  text-indent: -6rem;
+  color: #333;
+  text-shadow: 1px 1px rgba(99, 83, 83, 0.5);
+  -webkit-transition: background 0.5s 0.5s;
+  transition: background 0.5s 0.5s;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.introduction .introduction-txt li + li {
+  margin-top: 0.5rem;
+}
+
+.introduction .introduction-txt li span {
+  font-size: 0;
+}
+
+.introduction .introduction-txt li:first-child {
+  margin-top: 1rem;
+}
+
+.introduction .introduction-txt li:last-child {
+  margin-bottom: 1rem;
+}
+
+.introduction .introduction-txt li::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  width: 6rem;
+  text-align: right;
+  color: #333;
+  content: attr(data-introduction-txt-title) " : ";
+  text-shadow: 1px 1px rgba(99, 83, 83, 0.5);
+}
+
+.introduction .introduction-txt li::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  content: '';
+}
+
+.introduction .introduction-txt li:last-child::after {
+  display: none;
+}
+
 .path {
   position: relative;
 }
 
-.breadcrumb {
+.path .breadcrumb {
   background-color: transparent;
 }
 
-.breadcrumb-item a {
+.path .breadcrumb-item a {
   text-decoration: none;
   color: #333;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.breadcrumb-item a:hover {
+.path .breadcrumb-item a:hover {
   color: #f19483;
   text-shadow: 1px 1px #000;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.path .breadcrumb-item + .breadcrumb-item::before {
   color: #333;
 }
 
-.breadcrumb-item.active {
+.path .breadcrumb-item.active {
   color: #f19483;
   text-shadow: 1px 1px #000;
 }
 
-.breadcrumb-item.active::before {
+.path .breadcrumb-item.active::before {
   text-shadow: none;
 }
 
-.staggered-title {
-  position: relative;
-  color: #333;
-  font-weight: 700;
-}
-
-.staggered-txt {
-  background: linear-gradient(30deg, #fff, #f19483);
-  border-radius: 10px;
+.staggered {
+  background-color: rgba(134, 71, 63, 0.5);
 }
 
 .staggered-txt h3 {
@@ -264,24 +345,69 @@ body {
   background-color: #666;
 }
 
+.copyright {
+  padding: 1rem 0 0.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #f19483;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333), color-stop(rgba(0, 0, 0, 0.3)), to(transparent));
+  background: linear-gradient(0deg, #333 0 25%, rgba(0, 0, 0, 0.3), transparent);
+  background-color: #fffafa;
+  text-shadow: 1px 1px 5px #994639;
+}
+
 @media screen and (min-width: 768px) {
+  .title-decoration::before {
+    left: 35%;
+  }
+  .title-decoration::after {
+    right: 35%;
+  }
   .navbar .modal-title {
     margin-left: 42%;
   }
   .carousel-item img {
     height: 24vw;
   }
-  .staggered .col-12:nth-child(odd) {
-    margin-top: -10%;
+  .introduction .introduction-img {
+    top: 0;
+    bottom: 0;
   }
-  .staggered-title::before {
-    left: 35%;
+  .introduction .introduction-img .img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
-  .staggered-title::after {
-    right: 35%;
+  .introduction .introduction-txt li {
+    padding-left: 9rem;
+    font-size: 1.5rem;
+    text-align: left;
+    text-indent: -9rem;
+    -webkit-transition: 0.15s;
+    transition: 0.15s;
+  }
+  .introduction .introduction-txt li span {
+    font-size: 1.5rem;
+  }
+  .introduction .introduction-txt li::before {
+    width: 9rem;
+  }
+  .introduction .introduction-txt li:hover,
+  .introduction .introduction-txt li:hover::before {
+    text-shadow: 1px 1px #333;
+  }
+  .introduction .introduction-txt li:hover::after {
+    height: 2px;
+    background-color: #000;
   }
   .experience-table td {
     width: 696px;
+  }
+  .staggered-txt {
+    margin-top: -10%;
+    background: linear-gradient(30deg, #fff, #f19483);
+    border: 3px solid #fff;
+    border-radius: 10px;
   }
 }
 
@@ -292,13 +418,19 @@ body {
   .carousel-item img {
     height: 22vw;
   }
+  .introduction .container {
+    background: linear-gradient(30deg, rgba(0, 0, 0, 0.1), transparent);
+    border: 5px double #333;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+  }
   .experience-table {
     border: 1px solid #333;
   }
   .experience-table thead {
     display: table-header-group;
   }
-  .experience-table th {
+  .experience-table thead th {
     font-size: 1.25rem;
     color: #f19483;
     background-color: #333;
@@ -336,14 +468,17 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
-  .staggered-title::before {
+  .title-decoration::before {
     left: 35%;
   }
-  .staggered-title::after {
+  .title-decoration::after {
     right: 35%;
   }
   .carousel-item img {
     height: 20vw;
+  }
+  .introduction-txt li span {
+    font-size: 0;
   }
   .experience-table th {
     font-size: 1.5rem;

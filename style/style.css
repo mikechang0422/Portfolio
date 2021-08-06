@@ -484,5 +484,8 @@ body {
   .experience-table td {
     padding: 0.5rem;
   }
+  .staggered-txt {
+    height: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

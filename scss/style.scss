@@ -120,10 +120,6 @@ body {
   border-color: rgba(255, 255, 255, 0.75);
 }
 
-.modal-backdrop {
-  z-index: 1010;
-}
-
 .modal-content {
   color: $color-primary;
   background-color: rgba(0, 0, 0, 0.5);
@@ -199,16 +195,12 @@ body {
       text-indent: -6rem;
       color: $color-secondary;
       text-shadow: 1px 1px rgba(99, 83, 83, 0.5);
-      transition: background 0.5s 0.5s;
+      transition: 0.5s 0.5s;
       font-weight: 400;
-      word-wrap: break-word;
+      word-break: break-all;
 
       + li {
         margin-top: 0.5rem;
-      }
-
-      span {
-        font-size: 0;
       }
     }
 
@@ -423,10 +415,6 @@ body {
         text-align: left;
         text-indent: -9rem;
         transition: 0.15s;
-
-        span {
-          font-size: 1.5rem;
-        }
       }
 
       li::before {
@@ -546,15 +534,6 @@ body {
   .carousel-item {
     img {
       height: 20vw;
-    }
-  }
-
-  //introduction
-  .introduction-txt {
-    li {
-      span {
-        font-size: 0;
-      }
     }
   }
 

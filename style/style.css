@@ -114,10 +114,6 @@ body {
   border-color: rgba(255, 255, 255, 0.75);
 }
 
-.modal-backdrop {
-  z-index: 1010;
-}
-
 .modal-content {
   color: #f19483;
   background-color: rgba(0, 0, 0, 0.5);
@@ -191,18 +187,14 @@ body {
   text-indent: -6rem;
   color: #333;
   text-shadow: 1px 1px rgba(99, 83, 83, 0.5);
-  -webkit-transition: background 0.5s 0.5s;
-  transition: background 0.5s 0.5s;
+  -webkit-transition: 0.5s 0.5s;
+  transition: 0.5s 0.5s;
   font-weight: 400;
-  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .introduction .introduction-txt li + li {
   margin-top: 0.5rem;
-}
-
-.introduction .introduction-txt li span {
-  font-size: 0;
 }
 
 .introduction .introduction-txt li:first-child {
@@ -395,9 +387,6 @@ body {
     -webkit-transition: 0.15s;
     transition: 0.15s;
   }
-  .introduction .introduction-txt li span {
-    font-size: 1.5rem;
-  }
   .introduction .introduction-txt li::before {
     width: 9rem;
   }
@@ -485,9 +474,6 @@ body {
   }
   .carousel-item img {
     height: 20vw;
-  }
-  .introduction-txt li span {
-    font-size: 0;
   }
   .experience-table th {
     font-size: 1.5rem;

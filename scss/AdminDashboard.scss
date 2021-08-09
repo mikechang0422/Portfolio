@@ -93,8 +93,10 @@ a {
   left: 0;
   z-index: 1000;
   display: none;
+  overflow-x: hidden;
   width: 0;
   height: 100vh;
+  white-space: nowrap;
   background: linear-gradient(30deg, $dark-color, $primary-color);
   transition: width 0.15s;
 }
@@ -106,6 +108,11 @@ a {
   i {
     display: inline-block;
     padding-right: 1rem;
+  }
+
+  span {
+    overflow-x: hidden;
+    white-space: nowrap;
   }
 }
 
@@ -623,15 +630,15 @@ a {
     display: block;
     width: 20%;
     height: 100vh;
-    transition: width 0.3s, font-size 0s 0.3s;
+    transition: width 3s ease-in-out;
 
     h1 {
       font-size: 2rem;
     }
 
     .sidebar-menu {
-      i {
-        transition: font-size 0s 0.3s;
+      span {
+        transition: font-size 0s 0s;
       }
     }
   }

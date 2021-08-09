@@ -52,7 +52,7 @@ h4 { font-size: 1.25rem; }
 body {
   font-size: 16px;
   font-family: 'Merriweather', serif, 'Noto Sans TC', sans-serif;
-  //background-color: $dark-color;
+  background-color: $dark-color;
 }
 
 a {
@@ -147,7 +147,7 @@ a {
   align-items: center;
   padding: 1rem;
   background-color: #fff;
-  box-shadow: 3px 3px 5px rgba(33, 30, 85, 0.3);
+  box-shadow: 0 3px  5px rgba(33, 30, 85, 0.3);
 
   .nav-title {
     font-size: 1.5rem;
@@ -705,7 +705,8 @@ a {
       .card-item {
         margin-bottom: 0;
         width: 20%;
-        max-width: 200px;
+        min-width: 200px;
+        max-width: 250px;
       }
     }
   }
@@ -756,6 +757,7 @@ a {
 @media screen and (min-width: 1400px) {
   .wrap {
     position: relative;
+    overflow-y: auto;
     margin: 0 auto;
     max-width: 1320px;
   }
@@ -764,10 +766,10 @@ a {
     position: absolute;
     top: 0;
     left: 0;
+    height: 841.4px;
   }
 
   .main {
-    height: calc(100vh - 72px);
     background-color: #fae4fa;
   }
 

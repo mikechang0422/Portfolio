@@ -66,6 +66,7 @@ h4 {
 body {
   font-size: 16px;
   font-family: 'Merriweather', serif, 'Noto Sans TC', sans-serif;
+  background-color: #1d2231;
 }
 
 a {
@@ -162,8 +163,8 @@ a {
           align-items: center;
   padding: 1rem;
   background-color: #fff;
-  -webkit-box-shadow: 3px 3px 5px rgba(33, 30, 85, 0.3);
-          box-shadow: 3px 3px 5px rgba(33, 30, 85, 0.3);
+  -webkit-box-shadow: 0 3px 5px rgba(33, 30, 85, 0.3);
+          box-shadow: 0 3px 5px rgba(33, 30, 85, 0.3);
 }
 
 .nav .nav-title {
@@ -727,7 +728,8 @@ a {
   .cards-block .cards .card-item {
     margin-bottom: 0;
     width: 20%;
-    max-width: 200px;
+    min-width: 200px;
+    max-width: 250px;
   }
   .recent-order,
   .recent-customer,
@@ -770,6 +772,7 @@ a {
 @media screen and (min-width: 1400px) {
   .wrap {
     position: relative;
+    overflow-y: auto;
     margin: 0 auto;
     max-width: 1320px;
   }
@@ -777,9 +780,9 @@ a {
     position: absolute;
     top: 0;
     left: 0;
+    height: 841.4px;
   }
   .main {
-    height: calc(100vh - 72px);
     background-color: #fae4fa;
   }
   .cards {
@@ -799,4 +802,4 @@ a {
     height: 9rem;
   }
 }
-/*# sourceMappingURL=AdminDashborad.css.map */
+/*# sourceMappingURL=AdminDashboard.css.map */
